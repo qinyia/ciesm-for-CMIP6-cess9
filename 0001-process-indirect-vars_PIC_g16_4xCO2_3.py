@@ -32,7 +32,7 @@ def only_lonlattime (casename, dirs, int_year, end_year, int_mon, end_mon, var_i
 		for icase in range(ncase):
 			print("casename[icase]="+casename[icase])
 				
-			datadir=dirs[icase]+"/"+casename[icase]+"_192x288/"
+			datadir=dirs[icase]+"/"+casename[icase]+"_192x288/Revised/"
 			print("datadir="+datadir)
 			outdir="/GFPS8p/cess9/qinyi/CMOR3/mid-data-1/"+casename[icase]+"/"+var_in+"/"
 			print("outdir="+outdir)
@@ -77,10 +77,10 @@ def only_lev (casename, dirs, int_year, end_year, int_mon, end_mon, var_in):
 
 def all():
 	dir1="/GFPS8p/cess1/se2fv-regrid/rgr_out/"
-	casename=["PIC_g16_acc_nochem_1"]
+	casename=["PIC_g16_4xCO2_3"]
 	dirs=[dir1]
-	int_year=[501]
-	end_year=[501]
+	int_year=[1]
+	end_year=[150]
 	int_mon=[1]
 	end_mon=[12]
 	regrid_hor="F"

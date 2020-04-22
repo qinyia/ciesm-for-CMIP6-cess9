@@ -80,7 +80,7 @@ def all():
 	casename=["PIC_g16_acc_nochem_1"]
 	dirs=[dir1]
 	int_year=[501]
-	end_year=[501]
+	end_year=[1000]
 	int_mon=[1]
 	end_mon=[12]
 	regrid_hor="F"

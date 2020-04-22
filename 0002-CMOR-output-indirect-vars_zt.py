@@ -31,7 +31,7 @@ int_mon=[1]
 end_mon=[3]
 year=range(int_year[0],end_year[0]+1)
 mon=range(int_mon[0],end_mon[0]+1)
-indir_vars = [0,1] # indir-vars, lev
+indir_vars = [1,0]
 
 cutyear=300
 
@@ -578,15 +578,15 @@ if (indir_vars[1] == 0):
 				print(PS_2.dimensions)
 				print(PS_2.shape)
 				print(PS_2)
-				exit()
 #				cmor.write(var_ids,data[:],ntimes_passed=1,time_vals=time[:],time_bnds=time_bnds[:])
 #				cmor.write(ips, PS[:], ntimes_passed=1, time_vals=time[:],time_bnds=time_bnds[:],store_with=var_ids)
-				cmor.write(var_ids_2,data_2[:,:,:,:],time_vals=time[:],time_bnds=time_bnds[:])
-				cmor.write(ips_ilev, PS_2[:,:,:], time_vals=time[:],time_bnds=time_bnds[:],store_with=var_ids_2)
+				cmor.write(var_ids_2,data_2[:],time_vals=time[:],time_bnds=time_bnds[:])
+				cmor.write(ips_ilev, PS_2[:], time_vals=time[:],time_bnds=time_bnds[:],store_with=var_ids_2)
 
 
 				outfile = cmor.close(var_ids_2, file_name=True)
 				print("File written to: {}".format(outfile))
+				exit()
 		else:
 			print("No matched variable found in raw data! Please check again!")
 

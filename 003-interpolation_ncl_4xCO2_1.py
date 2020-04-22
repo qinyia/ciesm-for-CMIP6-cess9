@@ -17,12 +17,12 @@ def only (casename, dirs, int_year, end_year, int_mon, end_mon, regrid_hor, regr
 
     ### Part 1: regrid from SE to FV grid for all monthly dataset
 			if (regrid_hor == "T" ): # ---- need to double check when using ne30 data
-				workdir="/GPFS/cess1/se2fv-regrid/scripts/"
+				workdir="/GFPS8p/cess1/se2fv-regrid/scripts/"
 				## modify start
 				src_dir=dirs[icase]+"/"+casename[icase]+"/run/"
 				print(src_dir)
 				## modify end
-				out_dir="/GPFS/cess1/se2fv-regrid/rgr_out/"+casename[icase]+"_192x288/"
+				out_dir="/GFPS8p/cess1/se2fv-regrid/rgr_out/"+casename[icase]+"_192x288/"
 				
 				print(out_dir)
 				print(int_year[icase])
@@ -30,19 +30,19 @@ def only (casename, dirs, int_year, end_year, int_mon, end_mon, regrid_hor, regr
 				os.system('sh '+workdir+'/002_ncremap_files_params.sh '+workdir+' '+casename+' '+src_dir+' '+out_dir)
 				
 			if (regrid_ver == "T"):
-				datadir=dirs[icase]+"/"+casename[icase]+"_192x288/"
+				datadir=dirs[icase]+"/"+casename[icase]+"_192x288/Revised/"
 				print("datadir="+datadir)
-				outdir="/GPFS/cess9/qinyi/CMOR3/mid-data/"+casename[icase]+"/"
+				outdir="/GFPS8p/cess9/qinyi/CMOR3/mid-data/"+casename[icase]+"/"
 				print("outdir="+outdir)
 				cmd = 'sh ./002-ncl-ml2pl-params.sh %s %s %s %i %i %i %i %s %s' %(datadir, casename[icase], outdir, int_year[icase], end_year[icase], int_mon[icase], end_mon[icase], vars_plev_in[icase], vars_alev_in[icase])
 				os.system(cmd)
 			
 def all():
-	dir1="/GPFS/cess1/se2fv-regrid/rgr_out/"
-	casename=["B20TRC5_g16_acc_nochem_4"]
+	dir1="/GFPS8p/cess1/se2fv-regrid/rgr_out/"
+	casename=["PIC_g16_4xCO2_3"]
 	dirs=[dir1]
-	int_year=[1850]
-	end_year=[2014]
+	int_year=[1]
+	end_year=[150]
 #	end_year=[1850]
 	int_mon=[1]
 	end_mon=[12]

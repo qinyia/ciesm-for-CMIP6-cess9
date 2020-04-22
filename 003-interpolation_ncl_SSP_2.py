@@ -39,11 +39,10 @@ def only (casename, dirs, int_year, end_year, int_mon, end_mon, regrid_hor, regr
 			
 def all():
 	dir1="/GPFS/cess1/se2fv-regrid/rgr_out/"
-	casename=["B20TRC5_g16_acc_nochem_4"]
+	casename=["BRCP85C5CN_3"]
 	dirs=[dir1]
-	int_year=[1850]
-	end_year=[2014]
-#	end_year=[1850]
+	int_year=[2015]
+	end_year=[2100]
 	int_mon=[1]
 	end_mon=[12]
 	regrid_hor="F"

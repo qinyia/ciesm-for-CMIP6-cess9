@@ -77,10 +77,10 @@ def only_lev (casename, dirs, int_year, end_year, int_mon, end_mon, var_in):
 
 def all():
 	dir1="/GFPS8p/cess1/se2fv-regrid/rgr_out/"
-	casename=["PIC_g16_acc_nochem_1"]
+	casename=["BRCP45C5CN_3"]
 	dirs=[dir1]
-	int_year=[501]
-	end_year=[501]
+	int_year=[2015]
+	end_year=[2100]
 	int_mon=[1]
 	end_mon=[12]
 	regrid_hor="F"
